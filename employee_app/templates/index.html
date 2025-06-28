@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'employee_app/css/style.css' %}" />
+    <title>Office employee management system</title>
+  </head>
+  <body>
+    <div class="container heading">
+      <h1>OFFICE EMPLOYEE MANAGEMENT SYSTEM</h1>
+    </div>
+
+
+    
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
+        <div class="card">
+          <img src="{% static 'employee_app/images/card.jpg' %}" class="card-img-top img1" alt="..." />
+          
+          <div class="container d-flex flex-column">
+            <a type="button" class="btn btn-primary mb-2" href="/view_employee">View All Employee</a>
+            <a type="button" class="btn btn-success" href="/add_employee">Add Employee</a>
+          </div>
+
+          
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="{% static 'employee_app/images/image.png' %}" class="card-img-top img2" alt="..." />
+          <div class="container d-flex flex-column">
+            <a type="button" class="btn btn-info mb-2" href="/filter_employee">Filter Employees</a>
+            <a type="button" class="btn btn-danger" href="/delete_employee">Delete Employee</a>
+          </div>
+          
+        </div>
+
+      </div>
+     </div>
+    
+  </body>
+</html>

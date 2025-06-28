@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'employee_app/css/style.css' %}" />
+    <title>Filter Employee</title>
+</head>
+<body>
+  <div class="container heading">
+      <h1>FILTER ALL EMPLOYEES</h1>
+    </div>
+
+   <form class="forms" action="/filter_employee" method="post">
+    <div class="container forms-content">
+      {% csrf_token %} <!-- for security purposes and to prevent unwanted attacks -->
+
+      <label for="first_name" >FIRST NAME:</label> 
+      <input type="text" class="form-control" id="first_name" name="first_name" value="{{ first_name }}"><br>
+
+      <label for="last_name" >LAST NAME:</label>
+      <input type="text" class="form-control" id="last_name" name="last_name" value="{{ last_name }}"><br>
+
+      <label for="department">DEPARTMENT:</label>
+<input type="text" class="form-control" id="department" name="dept" value="{{ dept }}"><br>
+
+<label for="role">ROLE:</label>
+<input type="text" class="form-control" id="role" name="role" value="{{ role }}"><br>
+
+<label for="date">HIRE DATE:</label>
+<input type="date" class="form-control" id="date" name="hiring_date" value="{{ hiring_date }}"><br>
+
+      <button type="submit" class="btn btn-primary">Filter</button>
+    </div>
+  </form>
+
+
+ 
+</body>
+</html>
